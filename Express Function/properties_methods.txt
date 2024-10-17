@@ -1,0 +1,84 @@
+// for express.json()
+// Built-in middleware to parse incoming JSON requests
+app.use(express.json({
+  inflate: true,            // Enable deflated (compressed) body handling
+  limit: '100kb',           // Max request body size
+  strict: true,             // Only accept arrays and objects
+  type: 'application/json', // Media type to parse
+  verify: (req, res, buf, encoding) => {
+    console.log('Verifying request body:', buf.toString());
+    if (buf.length === 0) {
+      throw new Error('Empty body!');
+    }
+  }
+}));
+
+// for express.raw()
+// Middleware to parse incoming request bodies into Buffer
+app.use(express.raw({
+  inflate: true,                // Enable gzip/deflate handling
+  limit: '100kb',               // Maximum body size
+  type: 'application/octet-stream',  // Parse bodies with this content-type
+  verify: (req, res, buf, encoding) => {
+    console.log('Verifying buffer data...');
+    if (buf && buf.length === 0) {
+      throw new Error('Empty body!');
+    }
+  }
+}));
+
+// for express.text()
+// Middleware to parse incoming request bodies into a string
+app.use(express.text({
+  defaultCharset: 'utf-8',          // Default charset if not specified
+  inflate: true,                    // Handle compressed bodies
+  limit: '100kb',                   // Maximum body size
+  type: 'text/plain',               // Parse bodies with Content-Type: text/plain
+  verify: (req, res, buf, encoding) => {
+    console.log('Verifying raw buffer...');
+    if (buf && buf.length === 0) {
+      throw new Error('Empty body!');
+    }
+  }
+}));
+
+// for express.urlencoded()
+// Middleware to parse URL-encoded data
+app.use(express.urlencoded({
+  extended: true,                // Use the qs library for rich objects and arrays
+  inflate: true,                 // Handle deflated (compressed) bodies
+  limit: '100kb',                // Maximum request body size
+  parameterLimit: 1000,          // Maximum number of parameters
+  type: 'application/x-www-form-urlencoded', // Parse bodies with this content type
+  verify: (req, res, buf, encoding) => {
+    console.log('Verifying URL-encoded data...');
+    if (buf && buf.length === 0) {
+      throw new Error('Empty body!');
+    }
+  }
+}));
+
+// for express.router()
+// Create a router with options
+const router = express.Router({
+  caseSensitive: true,     // Enable case sensitivity ("/Foo" and "/foo" are different)
+  strict: true,            // Enable strict routing ("/foo" and "/foo/" are treated differently)
+  mergeParams: true        // Preserve req.params from the parent router
+});
+
+// for express.static()
+// Serve static files from the 'public' directory
+app.use('/static', express.static(path.join(__dirname, 'public'), {
+  dotfiles: 'ignore',           // Ignore dotfiles (e.g., .env, .git)
+  etag: true,                   // Enable ETag generation for caching
+  extensions: ['html', 'htm'],   // Fallback to .html or .htm extensions if no extension is specified
+  fallthrough: false,            // Forward errors if static files are not found
+  immutable: true,               // Mark files as immutable in Cache-Control header
+  index: 'index.html',           // Specify the index file
+  lastModified: true,            // Use OS file modification date as Last-Modified header
+  maxAge: '30d',                 // Cache static files for 30 days
+  redirect: true,                // Redirect to trailing "/" if directory is requested
+  setHeaders: (res, path, stat) => {
+    res.set('x-custom-header', 'my-custom-value');  // Add a custom header to the response
+  }
+}));

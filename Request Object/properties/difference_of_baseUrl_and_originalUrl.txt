@@ -1,0 +1,8 @@
+*base Url -> http://127.0.0.1:3000/admin/man/bro?filter=2342
+**output -> /admin/man . // "/admin/man" are mounted during request
+
+*original Url -> http://127.0.0.1:3000/admin/man/bro?filter=2342
+**ouptut -> /admin/man/bro?filter=2342
+
+
+***note: don't use node's request.url . it modified at sub application. use baseUrl or originalUrl
