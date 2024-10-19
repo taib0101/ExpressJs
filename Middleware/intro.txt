@@ -1,0 +1,70 @@
+* Defination: Middleware is a simple function, which contains request-response-objects and next-function and give access
+
+* types : 
+1. Application level Middleware 
+(example: app.param, app.use, app.get, app.post, app.put, app.delete, app.all, app.route etc)
+
+2. Router level Middleware
+(example: router.use)
+
+3. Error level Middleware
+4. Built in Middleware
+(example: express.json(), express.static())
+
+5. Third party Middleware
+
+
+# for Next() , it request came from Middleware04 - Middleware03 - Middleware02 - Middleware01
+
+                                                  next()
+                                    Middleware02---------Middleware01
+                                  next()/                      \ request
+                                       /                        \
+                                  Middleware03              express App
+                                next()/                           \  request
+                                     /                             \
+                            Middleware04------------------------http client
+                                                response                                    
+
+
+
+# response 
+
+                                                next()
+                                    Middleware02---------Middleware01
+                                    X   /     \                 \ request
+                                       /       \                 \
+                                  Middleware03  \            express App
+                                    X /          \                 \  request
+                                     /            \                 \
+                            Middleware04           \---------------http client
+                                                          response                      
+
+                                                    
+# error handle case
+
+                                                next()
+                                    Middleware02---------Middleware01
+                                    X   /     \                 \ request
+                                       /       \ error           \
+                                  Middleware03  \            express App
+                                    X /          \                 \  request
+                                     /            \                 \
+                            Middleware04    Error Middleware----http client
+                                                                              
+
+* every Middleware can call response not calling next , and call error Middleware for error handling
+
+# middle function
+
+const Middleware = (request,response,next) => {
+    // 1. executes any kind of code
+
+    try {
+        request.user = "Taib"; // 2. can change request response properties
+        response.send(); // 3. can end request response cycle
+        next(); // 4. if response not send next will pass next Middleware
+    } catch {
+        next("error"); // 5.throw and catch error
+    }
+}
