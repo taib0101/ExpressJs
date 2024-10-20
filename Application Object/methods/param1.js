@@ -16,6 +16,9 @@ subApp.use("/router", router);
 //     console.log("id :", value1);
 //     next();
 // });
+subApp.get("/user/:id",(request,response) => {
+    response.send();
+});
 
 // method 02:
 // subApp.param(["id", "roll"], (request, response, next, value) => {
