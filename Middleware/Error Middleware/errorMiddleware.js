@@ -9,17 +9,6 @@ const router = express.Router();
 app.use("/subApp", subApp);
 subApp.use("/router", router);
 
-const errorMiddleware = (error, request, response, next) => {
-    console.log(error.message);
-    response.status(500).send("Server Error");
-};
-
-// use those different router or app error, make sure it above of that
-// app.use(errorMiddleware) and router.get()
-app.use(errorMiddleware);
-// subApp.use(errorMiddleware);
-// router.use(errorMiddleware);
-
 const middleWare01 = (request, response, next) => {
     // throw "error";
     throw new Error("error occur"); // it pass to error handler
@@ -30,11 +19,15 @@ router.get("/user", middleWare01, (request, response) => {
     response.send();
 });
 
-// use those when same router or app get error, make sure it under of that
-// like router.get() and under router.use(errorMiddleware)
-// app.use(errorMiddleware);
-// subApp.use(errorMiddleware);
-// router.use(errorMiddleware);
+const errorMiddleware = (error, request, response, next) => {
+    console.log(error.message);
+    response.status(500).send("Server Error");
+};
+
+// better practice is write error handle middleware under the all code
+app.use(errorMiddleware);
+subApp.use(errorMiddleware);
+router.use(errorMiddleware);
 
 app.listen(3000, () => {
     console.log("port 3000 ...");
