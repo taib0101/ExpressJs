@@ -43,7 +43,7 @@ app.use((error, request, response, next) => {
         if (error.message) {
             response.status(500).send(error.message);
         } else {
-            response.send("There was an error bro");
+            response.status(500).send("There was an error bro");
         }
 
     } else {
