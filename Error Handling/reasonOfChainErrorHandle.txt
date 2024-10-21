@@ -1,0 +1,7 @@
+** we can reduce the asynchronous code for taking advantage of synchronous code's default 
+error handling.
+
+# why we use chaining middleware by array for function's . Note: to know chaining middleware
+# function in array . read my middleware/Error Handler/chainHandling.js file
+
+** we use chain error middleware functions in an Array to multiple error handle in express
