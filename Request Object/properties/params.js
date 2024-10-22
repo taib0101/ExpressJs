@@ -9,7 +9,7 @@ app.use("/subApp", subApp);
 subApp.use("/router1", router1);
 
 router1.get("/user/:paramValue", (request, response) => {
-    console.log("params :",request.params); // output: "/user"
+    console.log("params :",request.params); // { paramValue: '1234' }
     console.log("params.paramValue :",request.params.paramValue);
     response.send(request.params);
 });

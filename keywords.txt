@@ -1,0 +1,73 @@
+1. Express Methods
+        * express.json()
+        * express.text()
+        * express.raw()
+        * express.urlencoded()
+        * express.Router()
+        * express.static() [render root html file]
+
+2. Application Object
+        # Methods
+            * app.all()
+            * app.enable()
+            * app.disable()
+            * app.enabled()
+            * app.disabled()
+            * app.get() [for request, for get value of set value]
+            * app.set()
+            * app.post()
+            * app.put()
+            * app.delete()
+            * app.listen()
+            * app.path()
+            * app.param()
+            * app.route()
+            * app.render() [render ejs file which contains in views directory]
+        # Properties
+            * app.locals [to set local variable]
+            * app.mountpath
+        # Event
+            *app.event()
+
+3. Request Object
+        # Methods
+            * req.accepts()
+            * req.get()
+        # Properties
+            * req.app
+            * req.baseUrl
+            * req.body
+            * req.cookies [unsigned, signed cookies]
+            * req.hostname
+            * req.ip
+            * req.method
+            * req.originalUrl
+            * req.params
+            * req.path
+            * req.protocol
+            * req.query
+            * req.route
+            * req.secure
+
+4. Response Object
+        # Methods
+            * res.cookies()
+            * res.format() [ this is important, because it check accepts and response as message or render ejs or html file]
+            * res.set()
+            * res.get()
+            * res.setHeader()
+            * res.json()
+            * res.location()
+            * res.redirect()
+            * res.send()
+            * res.status().send()
+            * res.status().json()
+            * res.sendStatus()
+        # Properties
+            * res.app
+            * res.headersSent
+            * localVariableForEjsFile_withRender
+
+5. Router as like Application object but there not same at all.
+6. Middleware
+7. Error Handling

@@ -14,8 +14,8 @@ app.set("view engine","ejs");
 
 // locals are use for rendering ejs file , see example below
 router1.all("/user",(request,response) => {
-    // setting locals variable
-    // at ejs file i wrote this <%= name %> for get the locals variable
+    // setting local variable for ejs file
+    // at ejs file i wrote this <%= name %> for get the local variable
     
     response.render("pages/about",{
         name: "Variable"
