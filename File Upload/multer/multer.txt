@@ -1,0 +1,15 @@
+1. we use multer middleware for parsing lerge binary file,text data as JSON,
+multiple input file fields,form-data 
+and handling file uploads of form in node/express.
+
+2. it commonly used in <input type="file" enctype="multipart/form-data">
+note: if you want more information about attribute enctype of form goto my repo Basic-Html/ostad
+
+we use this below at front-end part 
+<form action="http://127.0.0.1:3000/" method="post" enctype="multipart/form-data">
+
+</form>
+
+
+* install multer by this command
+$ npm install multer
