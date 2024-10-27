@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Select any of them</h1>
+    <button id="formData">
+        Form Data
+    </button>
+
+    <button id="formUrlencoded">
+        x-www-form-urlencoded
+    </button>
+
+    <button id="json">
+        json
+    </button>
+</body>
+<script>
+    const formData = document.querySelector("#formData");
+    const formUrlencoded = document.querySelector("#formUrlencoded");
+    const json = document.querySelector("#json");
+
+    formData.addEventListener("click", (event) => {
+        window.location = "/formData";
+    });
+
+    formUrlencoded.addEventListener("click", (event) => {
+        window.location = "/urlEncoded";
+    });
+
+    json.addEventListener("click", (event) => {
+        window.location = "/json";
+    }); 
+</script>
+
+</html>

@@ -1,0 +1,18 @@
+responsibility
+* give root request, rendered file and static file
+* post, get request and response from server
+
+Frontend
+* for Form-Data no need headers
+* let formData = new FormData(); 
+* let params = new URLSearchParams();
+* form.reset();
+* we can do multiple request in one click
+
+Banckend
+* rendering .ejs or .html file
+* static file like .css, .js during render.
+* double response from server or API
+* router.use("/urlEncoded", express.static(path.join(__dirname, 'public')));
+* __dirname, __filename with type module
+ 

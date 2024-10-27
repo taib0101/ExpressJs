@@ -1,0 +1,3 @@
+** note: you can use this app and router
+app.use(express.json({ extended: true }));
+router.use(express.json({ extended: true }));
