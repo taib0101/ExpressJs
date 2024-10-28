@@ -1,0 +1,21 @@
+my-mern-app/
+├── backend/
+│   ├── models/
+│   │   └── User.js                # MongoDB model for User
+│   ├── routes/
+│   │   └── userRoutes.js          # Routes for user operations
+│   ├── .env                       # Environment variables (e.g., MongoDB URI, PORT)
+│   ├── server.js                  # Main Express server file
+│   └── package.json               # Backend dependencies and scripts
+├── frontend/
+│   ├── public/
+│   │   └── index.html             # Main HTML file
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── UserList.js        # React component to display users
+│   │   ├── App.js                 # Main App component
+│   │   ├── index.js               # Main entry point for React
+│   │   └── App.css                # Styles for the App component
+│   └── package.json               # Frontend dependencies and scripts
+├── README.md                      # Project documentation
+└── .gitignore                     # Files and folders to ignore in Git

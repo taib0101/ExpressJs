@@ -1,0 +1,43 @@
+1. Node Initiative
+	$ npm init --y
+	
+	
+2. Express Js packages
+	$ npm install express
+	$ npm install cookie-parser
+	$ npm install cors
+	$ npm install express-rate-limit (prevent DDOS attack)
+	$ npm install helmet (for security issue)
+	$ npm install hpp (prevent url parameter pollution attack)
+	$ npm install jsonwebtoken (authenticate web token)
+	$ npm install mongoose (work with mongo DB)
+	$ npm install nodemailer (work with mail)
+	$ npm install nodemon
+	$ sudo npm install -g nodemon
+	
+	
+3. File Folder Stracture
+	* Backend
+		* app
+		     * config
+		     * controllers
+		     * middlewares
+		     * models
+		     * utility
+		* storage
+		* routes
+		     -- api routing
+		* app.js
+		     -- import all applications utilities
+		     
+		     
+		     
+4. app.js
+	# import Application all packages
+	# Global Application Middleware
+	# Rate Limit Middleware
+	# Web Caching
+	# MongoDB Connection
+	# Set API Routes
+	# Set Application Storage
+	# Run Express Backend Project
