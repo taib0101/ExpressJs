@@ -1,0 +1,10 @@
+* Mongoose is an Object Data Modeling (ODM). Model is like a collection of database
+* Benefits of mongoose
+  1. Abstraction from low level Mongodb
+  2. Relationship between No-SQL
+  3. Provides Schema Validation . // Schema refers how collection's fields will take data , validation, sanitazation etc
+  4. Object Data Maping
+  5. 40%-60% less code, compared to raw mongodb package
+
+*process in node.js file
+  connect -> schema -> model -> CRUD
