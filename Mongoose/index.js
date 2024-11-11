@@ -1,9 +1,12 @@
 import express from "express";
 import { collectionModel } from "./Model/model.js";
+import { connect } from "./connect.js";
 import createRoute from "./CRUD/create.js";
 import readRoute from "./CRUD/Read.js";
 import updateRoute from "./CRUD/Update.js";
 import deleteRoute from "./CRUD/Delete.js";
+
+connect(); // connect database
 
 const app = express();
 
