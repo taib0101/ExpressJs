@@ -70,4 +70,34 @@
 
 5. Router as like Application object but there not same at all.
 6. Middleware
+        # Chain Middleware
+            * chain error middleware
+            * chain middleware
+        # Custom Middleware
+            * app use
+            * app router all
+            * app router get post put delete
+            * app router route
+        # Default Middleware
+            * app param
+            * app use
+        # Error  Middleware
+            * configured error middleware (it return function)
+            * error middleware
+            * next error middleware
+        # Response Middleware
+            * response middleware
+        # Third Party Middleware
+            * cookie parser
+        
 7. Error Handling
+        # Asynchronous Error Handle
+            * file custom error handling
+            * setTimeout custom error handling
+        # Synchronous Error Handle
+            ## Custom Error Handle
+                * custom error handling
+                * four zero four custom error handling
+                * streamBuffer error custom handling
+            * default error handle
+        * chain error handling

@@ -1,0 +1,27 @@
+/*
+    We create token for authenticated users for access in expire time.through this system web application remind the users in time. there lots of Auth Strategy like *Session Token, *JSON Web Token. Using Session token is old technology, use jwt.
+
+    JWT contains three method which is not for security
+    HEADER . JSON_Payload . Secret_key for Signature
+
+    $ npm install jsonwebtoken
+
+    documentation link -> https://www.npmjs.com/package/jsonwebtoken
+
+    generate private key by giving command
+    
+    ADD Private Key
+    $ openssl genpkey -algorithm RSA -out private.key
+    
+    ADD Public Key
+    $ openssl rsa -pubout -in private.key -out public.key
+    
+    Remove Public and Private Key
+    $ rm private.key public.key
+
+    we can GENERATE by symmetric or asymmetric and synchronous or asynchronous web token. We can set EXPIRED time while generating token.
+    VERIFY the token or missmatches hash algorithm or audiance or issuer or jwtid , and decode the token
+
+    symmetric encryption refers only to share A secret key, 
+    asymmetric encryption refers to share TWO key like public and private
+*/

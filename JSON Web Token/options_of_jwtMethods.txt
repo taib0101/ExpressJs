@@ -1,0 +1,19 @@
+algorithms: the names of the allowed algorithms
+    secret - ['HS256', 'HS384', 'HS512'] // HMAC(Hash-Based Message Authenticate Code) and SHA(Secure Hash Algorithm)
+    rsa - ['RS256', 'RS384', 'RS512'] //Ron Rivest, Adi Shamir, and Leonard Adleman
+    Elliptic Curve - ['ES256', 'ES384', 'ES512'] // Elliptic Curve Digital Signature Algorithm
+    default - ['RS256', 'RS384', 'RS512']
+
+expireIn: It provides to expire time for token.
+    "1000" is for millisecond, "10h" is for hour, "7d" is for day
+
+audience: It refer Application Client ID.This can be a string, a regular expression. { audience: "urn: taib" }
+    "urn:foo", /urn:f[o]{2}/, [/urn:f[o]{2}/, "urn:bar"]
+
+issuer (optional): It refers authentication service.A string or list of valid values for the issuer field.
+
+jwtid:  JWT ID (jwtid) is a JSON WEB TOKEN Unique ID. Generate Unique identifier by "uuid, nano, crypto packages".
+
+clockTimestamp: Sets the current time in seconds for all time-based comparisons.
+
+Nonce: Provide a string to check the nonce claim, used in OpenID for ID Tokens.

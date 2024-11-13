@@ -1,0 +1,13 @@
+* JSON Web Token Methods
+    ** sign method
+        1. expire time
+        2. generate token
+        3. older token
+    
+    ** verify method
+        1. error token
+        2. audiance issuer jwtid subject options 
+        3. algorithm missmatch
+
+    ** decode method
+        1. decode
