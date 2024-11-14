@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 export const schemaValidationByFunction = new Schema({
     vehicle: {
         type: String,
-        require: () => {
+        required: () => {
             return true;
         }, // validation by function
         lowercase: true, // it makes upper to lower, sanitization
