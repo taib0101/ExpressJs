@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 export const schemaValidationByArray = new Schema({
     vehicle: {
         type: String,
-        require: [true, "required error"], // array validation
+        required: [true, "required error"], // array validation
         lowercase: true, // it makes upper to lower, sanitization
         trim: true // sanitization
     },
