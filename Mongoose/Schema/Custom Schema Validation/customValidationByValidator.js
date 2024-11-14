@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 export const customValidation = new Schema({
     vehicle: {
         type: String,
-        require: [true, "require Error"], // validation by object
+        required: [true, "require Error"], // validation by object
         lowercase: true, // it makes upper to lower, sanitization
         trim: true, // sanitization
 
