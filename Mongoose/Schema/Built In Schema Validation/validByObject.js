@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 export const schemaValidationByObject = new Schema({
     vehicle: {
         type: String,
-        require: {
+        required: {
             values: true,
             message: "{VALUE} is done"
         }, // validation by object
