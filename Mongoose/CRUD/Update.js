@@ -14,9 +14,9 @@ router.put("/put", async (req, res) => {
         // method 02:
         // await collectionModel.findOneAndUpdate({ vehicle: "plane" }, { $set: { vehicle: "bike" } });
 
-        // method 03:
         /*
-            let data = await collection.updateOne({ vehicle: "plane" });
+            method 03:
+            let data = await collectionModel.findOneAndUpdate({ vehicle: "plane" }, { $set: { vehicle: "bike" } });
             data.vehicle = "bike"; // if you apply this and also write this data.save()
             await data.save();
         */
