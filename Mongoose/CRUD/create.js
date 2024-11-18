@@ -24,25 +24,26 @@ router.post("/post", async (req, res) => {
     }
 });
 
-// create many
-// insertMany
-/*
-    [
-        {
-            "vehicle": "Plane",
-            "name": "BMW",
-            "wheel": 4,
-            "price": 10000
-        },
-        {
-            "vehicle": "Plane",
-            "name": "BMW",
-            "wheel": 4,
-            "price": 10000
-        }
-    ]
-*/
 router.post("/post/all", async (req, res) => {
+    // create many
+    // insertMany
+    /*
+        [
+            {
+                "vehicle": "Plane",
+                "name": "BMW",
+                "wheel": 4,
+                "price": 10000
+            },
+            {
+                "vehicle": "Plane",
+                "name": "BMW",
+                "wheel": 4,
+                "price": 10000
+            }
+        ]
+    */
+    
     try {
         await collectionModel.insertMany(req.body)
         res.status(200).send("insertedMany successfully");
