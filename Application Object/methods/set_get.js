@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+// case sensitive for prefix routing
+app.set("case sensitive routing", true);
+
 // Set environment mode (NODE_ENV)
 app.set('env', 'production');
 
