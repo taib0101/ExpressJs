@@ -19,8 +19,10 @@ step 04:
 $ npm install -g yarn
 
 step 05:
-$ npm install express
+$ npm init -y
+$ npm add express
 # or
+$ yarn init -y
 $ yarn install express
 
 step 06:
